@@ -15,15 +15,15 @@ class ApplicationController < Sinatra::Base
     erb :new
   end
 
+  get '/posts' do
+    @posts = Post.all
+    erb :index
+  end
+
   post '/posts' do
     @post = Post.create(params)
 
     redirect '/posts'
-  end
-
-  get '/posts' do
-    @posts = Post.all
-    erb :index
   end
 
   get '/posts/:id' do
@@ -40,7 +40,6 @@ class ApplicationController < Sinatra::Base
   patch '/posts/:id' do
     @post = Post.find(params[:id])
     @post.update(params)
-    binding.pry
 
   end
 
