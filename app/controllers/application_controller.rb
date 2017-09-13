@@ -41,7 +41,7 @@ class ApplicationController < Sinatra::Base
     @post = Post.find(params[:id])
     @post.update(params)
     binding.pry
-    
+
   end
 
 end
