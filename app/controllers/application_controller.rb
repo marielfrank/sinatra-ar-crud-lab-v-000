@@ -12,7 +12,6 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/posts' do
-    # binding.pry
     @posts = Post.all
     erb :index
   end
@@ -37,7 +36,7 @@ class ApplicationController < Sinatra::Base
   patch '/posts/:id' do
     @post = Post.find(params[:id])
     @post.update(params)
-
+    binding.pry
   end
 
 end
