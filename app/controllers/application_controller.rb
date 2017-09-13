@@ -41,7 +41,7 @@ class ApplicationController < Sinatra::Base
     @post = Post.find(params[:id])
     @post.update(params)
 
-    redirect '/posts/#{@post.id}'
+    erb :show
   end
 
 end
