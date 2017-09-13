@@ -8,7 +8,8 @@
     <h1><%= @post.name %></h1>
     <p><%= @post.content %></p>
     <form action="/posts/<%= @post.id %>/delete" method="post">
-      <input type="text" name="" value="">
+      <input id="hidden" type="hidden" name="_method" value="delete">
+      <input type="text" value="delete">
     </form>
   </body>
 </html>
