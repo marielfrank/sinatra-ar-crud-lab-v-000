@@ -36,6 +36,7 @@ class ApplicationController < Sinatra::Base
   patch '/posts/:id' do
     @post = Post.find(params[:id])
     @post = Post.update(name: params[:name], content: params[:content])
+    binding.pry
     erb :show
   end
 
