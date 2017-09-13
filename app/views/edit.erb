@@ -5,6 +5,7 @@
     <title></title>
   </head>
   <body>
+    <h1><%= @post.name %></h1>
     <form action="/posts/:id" method="patch">
       <input id="hidden" type="hidden" name="_method" value="patch">
       <input type="text" name="name">
